@@ -1,24 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import Loading from './components/Loading/Loading';
+import CarsSlider from './components/Cars/CarsSlider';
+
+const url = 'https://mocki.io/v1/4f7bf80f-e4c8-44c5-9be2-afc649a5af96';
 
 function App() {
+  const [cars, setCars] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const getData = async () => {
+    setIsLoading(true);
+    try {
+      const resp = await fetch(url);
+      const data = await resp.json();
+      console.log(data);
+      setIsLoading(false);
+      setCars(data.cars);
+      return;
+    } catch (error) {
+      setError(error.response);
+      setIsLoading(false);
+      return;
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  if (isLoading) {
+    return (
+      <main
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Loading />;
+      </main>
+    );
+  }
+  if (error) {
+    return (
+      <main>
+        something went wrong when getting the data, Please reload the page
+      </main>
+    );
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <div className='container'>
+        <CarsSlider cars={cars} />
+      </div>
+    </main>
   );
 }
 

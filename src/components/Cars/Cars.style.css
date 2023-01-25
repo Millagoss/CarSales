@@ -1,0 +1,42 @@
+.cars-container {
+  width: 80%;
+  margin: 0 auto;
+}
+.cars-container h2 {
+  text-align: center;
+  font-size: 4rem;
+  color: rgb(8, 28, 25);
+  margin: 0;
+}
+.car-slide {
+  height: 20rem;
+  display: flex;
+  width: 100%;
+  margin-bottom: 2rem;
+  outline: 1px solid rgb(30, 54, 44);
+  outline-offset: 3px;
+  margin-top: 2rem;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  align-items: center;
+}
+
+.slide-car {
+  height: 15rem;
+  width: 30rem;
+  margin: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.slide-car:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cars-center {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  background: cadetblue;
+}
