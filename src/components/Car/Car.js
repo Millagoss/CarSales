@@ -61,7 +61,7 @@ const Car = ({ car }) => {
             book
           </button>
           <p className='close-modal' onClick={() => setIsModalOpen(false)}>
-            close modal
+            close
           </p>
         </div>
       )}
