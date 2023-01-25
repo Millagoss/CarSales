@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 
 import Loading from './components/Loading/Loading';
 import CarsSlider from './components/Cars/CarsSlider';
@@ -16,7 +15,6 @@ function App() {
     try {
       const resp = await fetch(url);
       const data = await resp.json();
-      console.log(data);
       setIsLoading(false);
       setCars(data.cars);
       return;

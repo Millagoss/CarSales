@@ -13,13 +13,14 @@
   display: flex;
   width: 100%;
   margin-bottom: 2rem;
-  outline: 1px solid rgb(30, 54, 44);
+  border-bottom: 5px solid rgb(127, 136, 132);
   outline-offset: 3px;
   margin-top: 2rem;
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
   align-items: center;
+  border-radius: 20px;
 }
 
 .slide-car {
@@ -32,11 +33,4 @@
 .slide-car:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px 20px rgba(0, 0, 0, 0.2);
-}
-
-.cars-center {
-  width: 70%;
-  margin: 0 auto;
-  display: flex;
-  background: cadetblue;
 }

@@ -21,13 +21,9 @@ const Car = ({ car }) => {
 
     setIndex(index + 1);
   };
-
   useEffect(() => {
-    setTimeout(() => {
-      setIsModalOpen(false);
-    }, [8000]);
-  }, [isModalOpen]);
-
+    setModalContent('');
+  }, []);
   const handleClick = () => {
     setIsModalOpen(true);
     setModalContent(`You have booked successfully for ${value}`);
@@ -47,7 +43,6 @@ const Car = ({ car }) => {
       <p className='price'>Price: {carPrice}$</p>
       <p className='detail'>{detail}</p>
       <div className='book'>
-        <Calendar onChange={onChange} value={value} />
         <button className='btn btn-book' onClick={handleClick}>
           book
         </button>
@@ -58,7 +53,18 @@ const Car = ({ car }) => {
       <button className='prev icon' onClick={handlePrev}>
         <FaArrowAltCircleLeft />
       </button>
-      {isModalOpen && <div className='modal'>{modalContent}</div>}
+      {isModalOpen && (
+        <div className='modal'>
+          <Calendar onChange={onChange} value={value} />
+          {modalContent ? <p>{modalContent}</p> : ''}
+          <button className='btn' onClick={handleClick}>
+            book
+          </button>
+          <p className='close-modal' onClick={() => setIsModalOpen(false)}>
+            close modal
+          </p>
+        </div>
+      )}
     </section>
   );
 };
