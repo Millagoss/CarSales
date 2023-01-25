@@ -18,17 +18,15 @@ const Car = ({ car }) => {
   };
   const handleNext = () => {
     if (index === images.length - 1) return;
-
     setIndex(index + 1);
   };
   useEffect(() => {
     setModalContent('');
-  }, []);
+  }, [car]);
   const handleClick = () => {
     setIsModalOpen(true);
     setModalContent(`You have booked successfully for ${value}`);
   };
-
   return (
     <section className='car-container'>
       <img src={images[index]} className='car-img' alt={carName} />
@@ -43,7 +41,7 @@ const Car = ({ car }) => {
       <p className='price'>Price: {carPrice}$</p>
       <p className='detail'>{detail}</p>
       <div className='book'>
-        <button className='btn btn-book' onClick={handleClick}>
+        <button className='btn btn-book' onClick={() => setIsModalOpen(true)}>
           book
         </button>
       </div>
@@ -55,7 +53,7 @@ const Car = ({ car }) => {
       </button>
       {isModalOpen && (
         <div className='modal'>
-          <Calendar onChange={onChange} value={value} />
+          <Calendar onChange={onChange} className='calendar' value={value} />
           {modalContent ? <p>{modalContent}</p> : ''}
           <button className='btn' onClick={handleClick}>
             book

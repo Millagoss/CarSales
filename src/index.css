@@ -187,7 +187,8 @@ ul {
 .loading {
   width: 6rem;
   height: 6rem;
-  border: 5px solid var(--grey-200);
+  margin-top: 20rem;
+  border: 10px solid var(--grey-200);
   border-radius: 50%;
   border-top-color: var(--myPrimary-700);
   animation: spinner 2s linear infinite;

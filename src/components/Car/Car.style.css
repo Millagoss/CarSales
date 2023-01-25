@@ -75,22 +75,26 @@
 
 .modal {
   font-size: 1.5rem;
-  width: auto;
+  width: 500px;
   height: auto;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 0 500px 50px rgba(48, 43, 43, 1);
   margin: 0 auto;
   position: fixed;
   flex-direction: column;
-  top: 20%;
+  top: 10%;
   background: gainsboro;
   left: 40%;
   text-align: center;
+  justify-content: center;
 }
 
 .close-modal {
   font-size: 1rem;
   text-decoration: underline;
   cursor: pointer;
+}
+.calendar {
+  margin: 0 auto;
 }
