@@ -13,6 +13,7 @@
   display: flex;
   width: 100%;
   margin-bottom: 2rem;
+  background: rgb(226, 233, 235);
   border-bottom: 5px solid rgb(127, 136, 132);
   outline-offset: 3px;
   margin-top: 2rem;

@@ -5,6 +5,8 @@
   justify-content: center;
   margin-bottom: 3rem;
   position: relative;
+  background: rgb(226, 233, 235);
+  border-radius: 20px;
 }
 
 .car-img {
